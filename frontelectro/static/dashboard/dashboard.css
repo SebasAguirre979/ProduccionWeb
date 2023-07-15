@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+html {
+    overflow: hidden;
+    font-family: 'Raleway';
+    letter-spacing: 2px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.menu__dashboard {
+    display: flex;
+}
+
+.items__dashboard {
+    margin: 0;
+    width: 15%;
+    height: 100vh;
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #120136, #035aa6);
+}
+
+.items__dashboard h4 {
+    color: white;
+}
+
+.services__dashboard {
+    width: 100%;
+}
+
+.header__dash {
+    position: absolute;
+    width: 15%;
+    height: 5rem;
+    background: linear-gradient(135deg, #120136, #035aa6);
+}
+
+.header__dash h4 {
+    padding: 0;
+    margin: 2rem 1rem;
+}
+
+.menu_dashboard {
+    margin: 7rem 0 0;
+    text-align: left;
+    height: 70vh;
+    width: 14rem;
+}
+
+.menu_dashboard ul li {
+    list-style: none;
+    margin: 3rem 0;
+}
+
+.menu_dashboard ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu_dashboard ul {
+    margin: 0 0 0 1.5rem;
+}
+
+.menu__dashboard hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(244, 244, 244, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
+/* FORMS */
+.data__form {
+    margin: 3.5rem 3.5rem 0;
+}
+
+.placa__val {
+    margin: 0.5rem 3.5rem 0;
+}
+
+.data__form h1 {
+    margin-bottom: 1rem;
+}
+
+.field__input input {
+    border: 0;
+    border-bottom: solid thin #747a7e;
+    border-radius: 0%;
+    outline: none;
+    width: 40%;
+    background: none;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.enter__button {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: #2229b5;
+    width: 40%;
+    color: white;
+    border: 0;
+    box-shadow: none;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in-out .2s;
+}
+
+.enter__button:hover {
+    border-radius: 20px 0;
+    transition: ease-in-out .2s;
+    background: #29108d;
+}
+
+.data__table {
+    display: grid;
+    margin: 0 10rem 0 10rem;
+    max-height: 17rem;
+    overflow-y: auto;
+}
+
+.data__table table tbody {
+    text-align: center;
+}
+
+.data__center {
+    text-align: center;
+    margin: 1rem;
+}
+
+.table__customers {
+    position: absolute;
+    top: 5rem;
+    left: 70%;
+    display: grid;
+    margin: 0 auto 0 5rem;
+}
+
+.success h4 {
+    margin: 0 0 1rem;
+    color: #25b925;
+}
+
+
+.btn__delete button {
+    border: none;
+    padding: 5px 10px;
+    margin: 0 0 10px;
+    border-radius: 5px;
+    background: #870000;
+    color: #fff;
+    cursor: pointer;
+}
+
+button.btn__edit {
+    border: none;
+    padding: 5px 17px;
+    margin: 0 0 5px;
+    border-radius: 5px;
+    background: #2229b5;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal-close {
+    float: right;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: red;
+}
+
+.active__service {
+    width: 40%;
+    position: absolute;
+    top: 7rem;
+    margin-left: 36rem;
+    display: grid;
+    text-align: center;
+    max-height: 25rem;
+    overflow-y: auto;
+}
+
+.active__service h1 {
+    margin-bottom: 3rem;
+}
+
+.active__service table thead {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+}
+
+.active__service table thead th {
+    width: 30%;
+    padding: 10px 0;
+    background: #2229b5;
+    color: #fff;
+}
+
+.active__service table tbody td {
+    padding: 10px;
+}
+
+.data__user {
+    width: 25rem;
+    margin: 0 5rem;
+}
+
+
+/* MODAL CREAR CLIENTE  */
+#modalCrearUsuario {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: hidden;
+}
+
+#modalCrearUsuario-content {
+    background-color: #fff;
+    margin: 10rem auto;
+    padding: 20px;
+    width: 40%;
+    text-align: center;
+}
+
+#modalCrearUsuario h1 {
+    padding: 2rem;
+}
+
+.modal__input input {
+    width: 100%;
+}
+
+/* FIN MODAL CLIENTE   */
+
+/* MODAL EDITAR PRODUCTO  */
+
+/* FIN MODAL EDITAR */
+
+#clienteVentana {
+    width: 20rem;
+    margin: 1rem 3rem;
+}
+
+.btn_cliente {
+    margin-top: 25px;
+}
+
+.lbl_user {
+    margin: 1rem;
+    display: flex;
+}
+
+.input__ventas {
+    margin: 5rem 9rem 0;
+}
+.ventas__form {
+    display: flex;
+}
+
+.input__ventas input {
+    border: 0;
+    border-bottom: solid thin #747a7e;
+    border-radius: 0%;
+    outline: none;
+    width: 20%;
+    background: none;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.btn__ventas {
+    background-color: #2229b5;
+    width: 5%;
+    color: white;
+    border: 0;
+    box-shadow: none;
+    height: 40px;
+    margin: 0 0 0 6rem;
+    padding: -1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in-out .2s;
+}
+
+.btn__ventas img,
+.btn__cant img {
+    width: 24px ;
+}
+
+.acomodar {
+    margin: 1rem 0 2rem 26rem;
+}
+.btn__cant {
+    background-color: #2229b5;
+    width: 5%;
+    color: white;
+    border: 0;
+    box-shadow: none;
+    height: 40px;
+    margin: 0 0 0 1.5rem;
+    padding: -1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in-out .2s;
+}

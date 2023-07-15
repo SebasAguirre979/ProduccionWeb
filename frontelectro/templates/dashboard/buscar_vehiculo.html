@@ -1,0 +1,43 @@
+{% extends 'dashboard/baseDash.html' %}
+
+{% block content %}
+<div class="data__form">
+    <h1>Buscar Vehiculo</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="field__input">
+            <input type="text" name="placa" placeholder="Ingrese placa a buscar" required>
+            <button class='enter__button' type="submit">BUSCAR VEHICULO</button>
+        </div>
+    </form>
+    {{ mensaje }}
+</div>
+<div class="data__table">
+    <table>
+        <thead>
+            <tr>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Placa</th>
+                <th>Descripcion</th>
+                <th>Total</th>
+                <th>Fecha entrada</th>
+                <th>Fecha Salida</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for datos in data %}
+            <tr>
+                <td>{{ datos.cliente.cedula }}</td>
+                <td>{{ datos.cliente.nombre }}</td>
+                <td>{{ datos.vehiculo.placa }}</td>
+                <td>{{ datos.s_descripcion }}</td>
+                <td>{{ datos.s_total }}</td>
+                <td>{{ datos.s_fecha_entrada }}</td>
+                <td>{{ datos.s_fecha_salida }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

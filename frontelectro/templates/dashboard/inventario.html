@@ -1,0 +1,88 @@
+{% extends 'dashboard/baseDash.html' %}
+
+{% block content %}
+<div class="data__center">
+    <div class="data__inv">
+        <h1>Inventario</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="field__input">
+                <input type="text" name="nombre_r" placeholder="Nombre repuesto" required>
+            </div>
+            <div class="field__input">
+                <input type="number" name="cantidad" placeholder="Cantidad" required>
+            </div>
+            <div class="field__input">
+                <input type="number" name="v_proveedor" placeholder="Valor Proveedor" required>
+            </div>
+            <div class="field__input">
+                <input type="number" name="v_venta" placeholder="Valor Venta" required>
+            </div>
+            <button class='enter__button' type="submit">INGRESAR REPUESTOS</button>
+        </form>
+        <hr>
+        <div class="success">
+            <h4>
+                {{ mensaje }}
+
+                {{ dataInvetario }}
+            </h4>
+        </div>
+
+    </div>
+    <div class="data__table">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Valor Proveedor</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in dataInventario %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <hr>
+                    <td>{{ item.r_nombre_repuesto }}</td>
+                    <td>{{ item.r_cantidad }}</td>
+                    <td>{{ item.r_valor_publico }}</td>
+                    <td>{{ item.r_valor_proveedor }}</td>
+                    <td>
+                        <button type="button" class="btn__edit"
+                            onclick="abrirModalEditar('{{ item.id }}')">EDITAR</button>
+                    </td>
+                </tr>
+                <!-- Modal de Edición -->
+                <div id="modalEditar" class="modal">
+                    <div class="modal-content">
+                        <h2>Editar Producto</h2>
+                        <form id="editarForm" method="POST">
+                            {% csrf_token %}
+                            <div class="field__input">
+                                <input type="text" name="nombre_r" value="{{ item.r_nombre_repuesto  }}" required>
+                            </div>
+                            <div class="field__input">
+                                <input type="number" name="cantidad" value="{{ item.r_cantidad }}" required>
+                            </div>
+                            <div class="field__input">
+                                <input type="number" name="v_proveedor" value="{{ item.r_valor_proveedor }}" required>
+                            </div>
+                            <div class="field__input">
+                                <input type="number" name="v_venta" value="{{ item.r_valor_publico }}" required>
+                            </div>
+                            <button class="enter__button btn_cliente" onclick="cerrarModalEditar()">CERRAR</button>
+                            <button type="submit" class="enter__button btn_cliente">CREAR VEHICULO</button>
+                        </form>
+                    </div>
+                </div>
+    </div>
+    {% endfor %}
+    </tbody>
+    </table>
+
+</div>
+{% endblock %}
